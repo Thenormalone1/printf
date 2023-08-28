@@ -23,6 +23,7 @@ int print_char(va_list);
 
 /* _putchar.c */
 int _putchar(char);
+int buffer(char);
 
 /**
  * struct _format - Typedef struct
