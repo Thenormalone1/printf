@@ -2,8 +2,9 @@
 
 /**
  * handler - Format controller
- * @str: Str
+ * @str: String format
  * @list: List of arguments
+ *
  * Return: Total size of arguments with the total size of the base string
  **/
 int handler(const char *str, va_list list)
@@ -32,8 +33,8 @@ int handler(const char *str, va_list list)
 }
 
 /**
- * percent_handler - percent format
- * @str: Str
+ * percent_handler - Controller for percent format
+ * @str: String format
  * @list: List of arguments
  * @i: Iterator
  *
@@ -43,7 +44,12 @@ int percent_handler(const char *str, va_list list, int *i)
 {
 	int size, j, number_formats;
 	format formats[] = {
-		{'s', print_string}, {'c', print_char}
+		{'s', print_string}, {'c', print_char},
+		{'d', print_integer}, {'i', print_integer},
+		{'b', print_binary}, {'u', print_unsigned},
+		{'o', print_octal}, {'x', print_hexadecimal_low},
+		{'X', print_hexadecimal_upp}, {'p', print_pointer},
+		{'r', print_rev_string}, {'R', print_rot}
 	};
 
 	*i = *i + 1;
